@@ -51,12 +51,12 @@
 	const bibleBooksMap = new Map<string, BibleBook[]>();
 
 	for (const book of books) {
-		const letter = book.code[0];
+		const letter = Number.isNaN(Number(book.code[0])) ? book.code[0] : book.code[2];
 
 		bibleBooksMap.set(letter, [...(bibleBooksMap.get(letter) ?? []), book]);
 	}
 
-	const letters = ['1', '2', '3'];
+	const letters: string[] = [];
 	for (let i = 65; i <= 90; i++) {
 		letters.push(String.fromCharCode(i));
 	}
