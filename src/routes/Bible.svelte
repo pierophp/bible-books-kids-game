@@ -6,6 +6,7 @@
 
 	type BibleBook = {
 		code: string;
+		abbr: string;
 		title: string;
 		position: number;
 	};
@@ -42,8 +43,9 @@
 		selectedVerse = verse;
 	}
 
-	const books: BibleBook[] = bibleBooks.map((bibleBook, i) => ({
+	const books: BibleBook[] = Object.keys(bibleBooks).map((bibleBook, i) => ({
 		code: removeAccents(bibleBook),
+		abbr: bibleBooks[bibleBook],
 		title: bibleBook,
 		position: i
 	}));
@@ -113,6 +115,8 @@
 					class="px-5 py-1 border-2 bg-purple-300 border-purple-400 hover:bg-purple-400 text-purple-800 flex items-center justify-center"
 					on:click={() => (selectedBook = bibleBook)}
 				>
+					<span class="font-bold">{bibleBook.abbr}</span>
+					-
 					{bibleBook.title}
 				</button>
 			{/each}
