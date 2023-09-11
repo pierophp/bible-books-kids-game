@@ -112,7 +112,7 @@
 		{:else if selectedLetter}
 			{#each bibleBooksMap.get(selectedLetter) as bibleBook}
 				<button
-					class="px-3 py-1 border-2 bg-purple-300 border-purple-400 hover:bg-purple-400 text-purple-800 flex items-center justify-center"
+					class="px-2 py-1 border-2 bg-purple-300 border-purple-400 hover:bg-purple-400 text-purple-800 flex items-center justify-center"
 					on:click={() => (selectedBook = bibleBook)}
 				>
 					<span class="font-bold">{bibleBook.abbr}</span>
