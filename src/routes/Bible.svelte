@@ -81,10 +81,12 @@
 </h1>
 
 <div class="p-2">
-	<button
-		class="px-5 py-1 my-2 border-2 bg-purple-800 hover:bg-purple-700 border-purple-900 text-white"
-		on:click={clean}>Voltar</button
-	>
+	{#if selectedLetter}
+		<button
+			class="px-5 py-1 my-2 border-2 bg-purple-800 hover:bg-purple-700 border-purple-900 text-white"
+			on:click={clean}>Voltar</button
+		>
+	{/if}
 
 	<div class="flex gap-2 flex-wrap max-w-4xl">
 		{#if selectedChapter}
