@@ -161,7 +161,7 @@
 	{#if selectedVerse}
 		<button
 			on:click={confirm}
-			class="flex gap-2 px-2 py-1 my-2 rounded border-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white"
+			class="flex gap-2 px-2 py-1 my-2 rounded border-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-600 text-white"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
