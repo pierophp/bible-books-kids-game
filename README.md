@@ -39,4 +39,4 @@ You can preview the production build with `npm run preview`.
 
 ## Generate PWA
 
-npx pwa-asset-generator static/logo.png static/pwa --path-override "/pwa" --background "rgba(107, 33, 168, 1)" -i src/app.html
+npx pwa-asset-generator static/logo.png static/pwa --path-override "/pwa" --background "rgba(107, 33, 168, 1)" -i src/app.html --manifest ./static/manifest.json
