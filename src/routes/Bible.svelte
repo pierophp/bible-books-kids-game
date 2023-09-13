@@ -85,8 +85,24 @@
 <div class="p-2 select-none">
 	{#if selectedLetter}
 		<button
-			class="px-5 py-1 my-2 border-2 bg-purple-800 hover:bg-purple-700 border-purple-900 text-white"
-			on:click={clean}>Voltar</button
+			class="flex gap-2 rounded px-3 py-1 my-2 border-2 bg-purple-800 hover:bg-purple-700 border-purple-900 text-white"
+			on:click={clean}
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+				/>
+			</svg>
+			<span> Voltar </span></button
 		>
 	{/if}
 
@@ -94,7 +110,7 @@
 		{#if selectedChapter}
 			{#each verses as verse}
 				<button
-					class="w-10 h-10 border-2 bg-purple-400 hover:bg-purple-800 border-purple-500 text-white flex items-center justify-center disabled:opacity-75 disabled:bg-gray-500 disabled:border-gray-700"
+					class="w-10 h-10 border-2 rounded bg-purple-400 hover:bg-purple-800 border-purple-500 text-white flex items-center justify-center disabled:opacity-75 disabled:bg-gray-500 disabled:border-gray-700"
 					on:click={() => selectVerse(verse)}
 				>
 					{verse}
@@ -103,7 +119,7 @@
 		{:else if selectedBook}
 			{#each Object.values(booksChapters[selectedBook.position]).map((item) => item.c) as chapter}
 				<button
-					class="w-10 h-10 border-2 bg-purple-600 hover:bg-purple-800 border-purple-700 text-white flex items-center justify-center disabled:opacity-75 disabled:bg-gray-500 disabled:border-gray-700"
+					class="w-10 h-10 border-2 rounded bg-purple-600 hover:bg-purple-800 border-purple-700 text-white flex items-center justify-center disabled:opacity-75 disabled:bg-gray-500 disabled:border-gray-700"
 					on:click={() => selectChapter(chapter)}
 				>
 					{chapter}
@@ -112,7 +128,7 @@
 		{:else if selectedLetter}
 			{#each bibleBooksMap.get(selectedLetter) as bibleBook}
 				<button
-					class="px-1 py-1 border-2 bg-purple-300 border-purple-400 hover:bg-purple-400 text-purple-800 flex items-center justify-center"
+					class="px-1 py-1 border-2 rounded bg-purple-300 border-purple-400 hover:bg-purple-400 text-purple-800 flex items-center justify-center"
 					on:click={() => (selectedBook = bibleBook)}
 				>
 					<span class="font-bold">{bibleBook.abbr}</span>
@@ -123,7 +139,7 @@
 		{:else}
 			{#each letters as letter}
 				<button
-					class="w-10 h-10 border-2 bg-purple-600 hover:bg-purple-800 border-purple-700 text-white flex items-center justify-center disabled:opacity-75 disabled:bg-gray-500 disabled:border-gray-700"
+					class="w-10 h-10 border-2 rounded bg-purple-600 hover:bg-purple-800 border-purple-700 text-white flex items-center justify-center disabled:opacity-75 disabled:bg-gray-500 disabled:border-gray-700"
 					disabled={!bibleBooksMap.has(letter)}
 					on:click={() => (selectedLetter = letter)}
 				>
@@ -135,8 +151,19 @@
 	{#if selectedVerse}
 		<button
 			on:click={confirm}
-			class="px-5 py-1 my-2 border-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white"
-			>Confirmar</button
+			class="flex gap-2 px-2 py-1 my-2 rounded border-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+			</svg>
+			<span> Confirmar </span></button
 		>
 	{/if}
 	{#if history.length > 0}
