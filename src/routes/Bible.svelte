@@ -106,6 +106,16 @@
 		>
 	{/if}
 
+	<div class="py-2 font-bold">
+		{#if selectedChapter}
+			Escolha um Versículo:
+		{:else if selectedBook}
+			Escolha um Capítulo:
+		{:else if selectedLetter}
+			Escolha um Livro:
+		{/if}
+	</div>
+
 	<div class="flex gap-2 flex-wrap max-w-4xl">
 		{#if selectedChapter}
 			{#each verses as verse}
