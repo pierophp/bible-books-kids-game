@@ -82,7 +82,7 @@
 	{/if}
 </h1>
 
-<div class="p-2">
+<div class="p-2 select-none">
 	{#if selectedLetter}
 		<button
 			class="px-5 py-1 my-2 border-2 bg-purple-800 hover:bg-purple-700 border-purple-900 text-white"
@@ -115,7 +115,7 @@
 					class="px-1 py-1 border-2 bg-purple-300 border-purple-400 hover:bg-purple-400 text-purple-800 flex items-center justify-center"
 					on:click={() => (selectedBook = bibleBook)}
 				>
-					<span class="font-bold">{bibleBook.abbr}</span> 
+					<span class="font-bold">{bibleBook.abbr}</span>
 					-
 					{bibleBook.title}
 				</button>
