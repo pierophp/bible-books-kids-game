@@ -16,10 +16,15 @@
 	}
 
 	function clean() {
-		selectedLetter = null;
-		selectedBook = null;
-		selectedChapter = null;
-		selectedVerse = null;
+		if (selectedVerse) {
+			selectedVerse = null;
+		} else if (selectedChapter) {
+			selectedChapter = null;
+		} else if (selectedBook) {
+			selectedBook = null;
+		} else {
+			selectedLetter = null;
+		}
 	}
 
 	function confirm() {
