@@ -164,28 +164,50 @@
 		{/if}
 	</div>
 	{#if selectedVerse}
-		<button
-			on:click={confirm}
-			class="flex gap-2 px-2 py-1 my-2 rounded border-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-600 text-white"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				stroke="currentColor"
-				class="w-6 h-6"
+		<div class="flex gap-2">
+			<button
+				on:click={confirm}
+				class="flex gap-2 px-2 py-1 my-2 rounded border-2 bg-emerald-500 hover:bg-emerald-600 border-emerald-600 text-white"
 			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-			</svg>
-			<span> Confirmar </span>
-		</button>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+				</svg>
+				<span> Confirmar </span>
+			</button>
 
-		<a
-			href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=T&prefer=lang&bible=01001001&pub=nwtsty"
-			target="_blank"
-			>Abrir Bíblia
-		</a>
+			<a
+				class="flex gap-2 px-2 py-1 my-2 rounded border-2 bg-blue-500 hover:bg-blue-600 border-blue-600 text-white"
+				href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=T&prefer=lang&bible={String(
+					selectedBook.position + 1
+				).padStart(2, '0')}{String(selectedChapter).padStart(3, '0')}{String(
+					selectedVerse
+				).padStart(3, '0')}&pub=nwtsty"
+				target="_blank"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+					/>
+				</svg>
+				<span> Abrir Bíblia </span>
+			</a>
+		</div>
 	{/if}
 	{#if history.length > 0}
 		<div class="my-5 border-t border-purple-600">
