@@ -15,7 +15,7 @@
 		return str.normalize('NFD').replace(/\p{Diacritic}/gu, '');
 	}
 
-	function clean() {
+	function clear() {
 		if (selectedVerse) {
 			selectedVerse = null;
 		} else if (selectedChapter) {
@@ -27,11 +27,18 @@
 		}
 	}
 
+	function clearAll() {
+		selectedVerse = null;
+		selectedChapter = null;
+		selectedBook = null;
+		selectedLetter = null;
+	}
+
 	function confirm() {
 		if (selectedVerse) {
 			history = [`${selectedBook.title} ${selectedChapter}:${selectedVerse}`, ...history];
 		}
-		clean();
+		clearAll();
 	}
 
 	function selectChapter(chapter: number) {
@@ -91,7 +98,7 @@
 	{#if selectedLetter}
 		<button
 			class="flex gap-2 rounded px-3 py-1 my-2 border-2 bg-purple-800 hover:bg-purple-700 border-purple-900 text-white"
-			on:click={clean}
+			on:click={clear}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
