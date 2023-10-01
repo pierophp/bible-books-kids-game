@@ -178,8 +178,14 @@
 			>
 				<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
 			</svg>
-			<span> Confirmar </span></button
-		>
+			<span> Confirmar </span>
+		</button>
+
+		<a
+			href="https://www.jw.org/finder?srcid=jwlshare&wtlocale=T&prefer=lang&bible=01001001&pub=nwtsty"
+			target="_blank"
+			>Abrir Bíblia
+		</a>
 	{/if}
 	{#if history.length > 0}
 		<div class="my-5 border-t border-purple-600">
